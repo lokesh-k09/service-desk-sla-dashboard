@@ -1,0 +1,5 @@
+sla_policy_id,priority,target_first_response_mins,target_resolution_mins
+SLA_P1,P1,30,240
+SLA_P2,P2,60,720
+SLA_P3,P3,240,2880
+SLA_P4,P4,480,5760

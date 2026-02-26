@@ -1,0 +1,30 @@
+Data Dictionary (high level)
+
+tickets.csv
+- ticket_id: unique ticket identifier
+- created_at: ticket created timestamp
+- channel: Email/Chat/Phone/Web
+- category, subcategory: issue classification
+- priority: P1 (highest) to P4 (lowest)
+- assigned_agent_id: FK to agents.agent_id
+- first_response_at: timestamp of first agent response
+- resolved_at: timestamp resolved (blank if not resolved)
+- status: Open/Pending/In Progress/Resolved
+- requester_type: Customer/Internal/Partner
+- sla_policy_id: FK to sla_policies.sla_policy_id
+- first_response_mins: computed minutes to first response
+- resolution_mins: computed minutes to resolution (blank if unresolved)
+- sla_first_response_met: boolean flag vs SLA target
+- sla_resolution_met: boolean flag vs SLA target (only meaningful if Resolved)
+
+agents.csv
+- agent_id: unique agent identifier
+- team: Tier 1/Tier 2/Escalations
+- shift: AM/PM/Overnight
+- tenure_months: integer
+
+sla_policies.csv
+- sla_policy_id: key
+- priority: P1..P4
+- target_first_response_mins
+- target_resolution_mins
